@@ -114,12 +114,14 @@ public class TicketMachine
             System.out.println("# " + price + " cents.");
             System.out.println("##################");
             System.out.println();*/
+            
+            total = total + balance;
+            balance = balance-price;
 
         } else{
             
 
-            total = total + balance;
-            balance = 0;
+            
             brokeAttempts++;
             if(brokeAttempts<3){
                 System.out.println("You do not have enough money, you are missing "+(price-balance) +" cents" );
