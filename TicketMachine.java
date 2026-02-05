@@ -99,9 +99,9 @@ public class TicketMachine
     public void printTicket()
     {
         if(balance>= price){
-
+            brokeAttempts=0;
             if(brokeAttempts<3){
-                brokeAttempts++;
+                
                 
                 System.out.println("##################");
                 System.out.println("# The BlueJ Line");
@@ -129,7 +129,7 @@ public class TicketMachine
 
             total = total + balance;
             balance = 0;
-            brokeAttempts=0;
+            brokeAttempts++;
         } 
 
         // Simulate the printing of a ticket.
