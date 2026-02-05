@@ -100,22 +100,13 @@ public class TicketMachine
     {
         if(balance>= price){
             brokeAttempts=0;
-            if(brokeAttempts<3){
-                
-                
-                System.out.println("##################");
-                System.out.println("# The BlueJ Line");
-                System.out.println("# Ticket");
-                System.out.println("# " + price + " cents.");
-                System.out.println("##################");
-                System.out.println();
-            } else if(brokeAttempts==3){
-                System.out.println("Get yo money up not yo funni up gng");
-            } else if(brokeAttempts==4){
-                System.out.println("I ain't letting you in for free lil vro");
-            }else{
-                System.out.println("Your broke ahh better get to walking cuz you ain't got enough money for this ticket gng");
-            }
+
+            System.out.println("##################");
+            System.out.println("# The BlueJ Line");
+            System.out.println("# Ticket");
+            System.out.println("# " + price + " cents.");
+            System.out.println("##################");
+            System.out.println();
 
             /*System.out.println("##################");
             System.out.println("# The BlueJ Line");
@@ -125,11 +116,20 @@ public class TicketMachine
             System.out.println();*/
 
         } else{
-            prompt();
+            
 
             total = total + balance;
             balance = 0;
             brokeAttempts++;
+            if(brokeAttempts<3){
+                System.out.println("You do not have enough money, you are missing "+(price-balance) +" cents" );
+            }else if(brokeAttempts==3){
+                System.out.println("Get yo money up not yo funni up gng");
+            } else if(brokeAttempts==4){
+                System.out.println("I ain't letting you in for free lil vro");
+            }else{
+                System.out.println("Your broke ahh better get to walking cuz you ain't got enough money for this ticket gng");
+            }
         } 
 
         // Simulate the printing of a ticket.
